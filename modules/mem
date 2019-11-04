@@ -1,0 +1,9 @@
+#!/bin/sh
+
+memlabel=" "
+
+mem()
+{
+	freeMem=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
+	printf "%s %s %s" "$memlabel" "$freeMem" "$SEP"
+}

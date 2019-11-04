@@ -1,0 +1,26 @@
+#!/bin/sh
+#      _ _                
+#   __| | |__   __ _ _ __ 
+#  / _` | '_ \ / _` | '__|
+# | (_| | |_) | (_| | |   
+#  \__,_|_.__/ \__,_|_|   
+#                         
+# Created and Maintained by:
+# Yousef H. Akbar <yousef@yhakbar.com>
+
+# directory variables for dbar and modules.
+# by changing dbar path, modules path will follow
+# if you want them on separate locations, change accordingly. you have that freedom :)
+DIR="$HOME/Documents/repos/dbar"
+MODULES="$DIR/modules"
+
+# separator/delimiter in between any two modules
+SEP="|"
+
+# source all modules from $MODULES. sourcing will not run them, just makes it possible
+for module in $(ls $MODULES/* | tr ' ' '\n')
+do
+	source $module
+done
+
+xsetroot -name " $(mem) $(disk) $(mail)$(calendar) $(clock)"

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+disklabel=""
+
+disk()
+{
+	STO=$(df -h | awk '/sda3/ {print $4}')
+	printf "%s %s " "$disklabel" "$STO"
+	printf "%s" "$SEP"
+}

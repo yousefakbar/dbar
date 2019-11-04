@@ -1,0 +1,10 @@
+#!/bin/sh
+
+clockLabel=" "
+
+clock()
+{
+	clk=$(echo $(date '+%H:%M:%S'))
+	printf "%s%s" "$clockLabel" "$clk"
+}
+
