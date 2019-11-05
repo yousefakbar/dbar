@@ -5,5 +5,5 @@ memlabel=" "
 mem()
 {
 	freeMem=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
-	printf "%s%s %s" "$memlabel" "$freeMem" "$SEP"
+	printf "\x03%s\x01%s %s" "$memlabel" "$freeMem" "$SEP"
 }
