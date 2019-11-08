@@ -23,4 +23,4 @@ do
 	source $module
 done
 
-xsetroot -name " $(mem) $(disk) $(mail)$(calendar) $(clock)"
+xsetroot -name " $(mem) $(disk) $(bat) $(wifi) $(mail)$(calendar) $(clock)"

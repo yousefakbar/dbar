@@ -5,6 +5,6 @@ clockLabel=" "
 clock()
 {
 	clk=$(echo $(date '+%H:%M:%S'))
-	printf "\x03%s\x01%s" "$clockLabel" "$clk"
+	printf "%s%s" "$clockLabel" "$clk"
 }
 

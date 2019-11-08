@@ -5,6 +5,6 @@ calLabel=" "
 calendar()
 {
 	today=$(echo $(date '+%a %m/%d/%y'))
-	printf "\x03%s\x01%s %s" "$calLabel" "$today" "$SEP"
+	printf "%s%s %s" "$calLabel" "$today" "$SEP"
 }
 

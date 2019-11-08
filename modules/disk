@@ -4,7 +4,7 @@ disklabel=""
 
 disk()
 {
-	STO=$(df -h | awk '/sda3/ {print $4}')
-	printf "\x03%s\x01 %s " "$disklabel" "$STO"
+	STO=$(df -h | awk '/sda4/ {print $4}')
+	printf "%s %s " "$disklabel" "$STO"
 	printf "%s" "$SEP"
 }
