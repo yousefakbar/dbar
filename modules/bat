@@ -2,7 +2,6 @@
 
 getLabel()
 {
-	perc=$(acpi | grep -Eo '[0-9][0-9]%' | tr -d '%')
 	numLabel=$(($perc / 10))
 
 	[[ $numLabel == "1" ]] && batLabel=""
@@ -14,7 +13,7 @@ getLabel()
 	[[ $numLabel == "7" ]] && batLabel=""
 	[[ $numLabel == "8" ]] && batLabel=""
 	[[ $numLabel == "9" ]] && batLabel=""
-	[[ $numLabel == "10" ]] && batLabel=""
+	[[ $numLabel == "10" ]] && batLabel="" && batper="FULL"
 }
 
 getChgLabel()
@@ -24,8 +23,8 @@ getChgLabel()
 
 bat()
 {
-	batper=$(acpi | grep -Eo '[0-9][0-9]%')
-	perc=$(acpi | grep -Eo '[0-9][0-9]%' | tr -d '%')
+	batper=$(acpi | grep -Eo '[0-9]?[0-9][0-9]%')
+	perc=$(acpi | grep -Eo '[0-9]?[0-9][0-9]%' | tr -d '%')
 	batLabel=""
 	acpi | grep 'Charging' >/dev/null && isCharging=0 || getLabel
 
