@@ -1,6 +1,6 @@
 #!/bin/sh
 
-disklabel=""
+disklabel=""
 
 disk()
 {
