@@ -11,7 +11,7 @@
 # directory variables for dbar and modules.
 # by changing dbar path, modules path will follow
 # if you want them on separate locations, change accordingly. you have that freedom :)
-DIR="$HOME/Documents/repos/dbar"
+DIR="/usr/local/src/dbar"
 MODULES="$DIR/modules"
 
 # separator/delimiter in between any two modules
@@ -23,4 +23,8 @@ do
 	source $module
 done
 
-xsetroot -name " $(mem) $(disk) $(bat) $(wifi) $(mail) $(calendar) $(clock)"
+while :
+do
+	xsetroot -name " $(mem) $(disk) $(bat) $(wifi) $(mail) $(calendar) $(clock)"
+	sleep 5
+done 
