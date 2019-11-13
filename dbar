@@ -25,6 +25,6 @@ done
 
 while :
 do
-	xsetroot -name " $(mem) $(disk) $(bat) $(wifi) $(mail) $(calendar) $(clock)"
+	xsetroot -name " $(bat) $(mail) $(calendar) $(clock)"
 	sleep 5
 done 
