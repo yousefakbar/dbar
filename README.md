@@ -1,1 +1,1 @@
-dbar
+/home/yousef/ownCloud/vimwiki/dbar.md
