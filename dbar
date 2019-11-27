@@ -23,8 +23,23 @@ do
 	source $module
 done
 
-while :
-do
-	xsetroot -name " $(mem) $(disk) $(bat) $(mail) $(calendar) $(clock)"
-	sleep 5
-done 
+run()
+{
+	while :
+	do
+		xsetroot -name " $(mem) $(disk) $(bat) $(mail) $(calendar) $(clock)"
+		sleep 5
+	done 
+}
+
+case $@ in
+	"")
+		run ;;
+	"-L")
+		echo $(ls $MODULES/*) | tr -d '/usr/local/src/dbar/modules' ;;
+	"-q")
+		pkill dbar ;;
+	"-r")
+		pkill dbar
+		run & disown ;;
+esac
